@@ -2,33 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>javascript intro</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body onload="hello()">
-    <input type="number" id="aa">
-    <button onclick="bye()">Click</button>
-    <h1 id="response"></h1>
-    <h1 id="forloop"></h1>
-    
- <script> 
-      
-        function bye(){
-           document.getElementById("response").innerHTML="Not Eligible"
-            
+<body>
 
-        }
-        function aa(){
-            for(var i=0;i<10;i++){
-                documnet.getElementById("forloop").innerHTML=i;
-                console.log(i);
+    <section class="container">
+        <div class="card">
 
-            }
-        }
+            <img class="profile" 
+            src="profile.jpeg" 
+            alt="Profile.jpeg">
 
+            <h1 class="typing">Hi, I'm Milla</h1>
 
-     
-        
-    </script>
+            <p class="fade">
+                3rd-year Computer Science Engineering student at VJEC, 
+                passionate about Web Development and building user-friendly 
+                digital experiences. Skilled in HTML, CSS, JavaScript 
+                and continuously improving problem-solving skills.
+            </p>
+
+            <div class="buttons">
+                <a href="#"><button>Instagram</button></a>
+                <a href="#"><button>LinkedIn</button></a>
+                <a href="#"><button>GitHub</button></a>
+            </div>
+
+            <br>
+
+            <a href="dob.html"><button class="project-btn">VIEW PROJECTS</button></a>
+
+        </div>
+    </section>
+
 </body>
 </html>
