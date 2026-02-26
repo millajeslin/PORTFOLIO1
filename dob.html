@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Lived Calculator</title>
+
+  
+    
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+}
+
+.calculator-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+input[type="date"] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #2e59d9;
+}
+
+.result-text {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #1cc88a;
+    font-size: 16px;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #4e73df;
+    font-size: 14px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+</style>
+<body>
+    <div class="calculator-section">
+        <h2>Days Lived Calculator</h2>
+        <p>Enter your date of birth:</p>
+        <input type="date" id="dob-input">
+        <button onclick="calculateDays()">Calculate</button>
+        <div id="result" class="result-text"></div>
+
+        <div class="links">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        function calculateDays() {
+            const dobInput = document.getElementById("dob-input").value;
+
+            if (!dobInput) {
+                document.getElementById("result").innerText = "Please select a date.";
+                return;
+            }
+
+            const dob = new Date(dobInput);
+            const today = new Date();
+
+            if (dob > today) {
+                document.getElementById("result").innerText = "Date of birth cannot be in the future.";
+                return;
+            }
+
+            const diffTime = today - dob;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+            document.getElementById("result").innerText =
+                "You have lived for " + diffDays + " days.";
+        }
+    </script>
+</body>
+</html>
